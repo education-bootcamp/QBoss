@@ -1,5 +1,5 @@
 let playerName = '';// let var const
-let level = '';
+let level = '';  // 1l==> 0-50 => (10 * 2 = ?) 2nd 0-100 ==> (55 / 6);
 
 // start login form js
 letsGetStarted = () => {
@@ -22,7 +22,6 @@ letsGetStarted = () => {
     //====> redirect to gaming console==>
     let playerData={name:playerName,level:level};
     localStorage.setItem("playerData",JSON.stringify(playerData));
-    console.log(localStorage.getItem("playerData"));
     window.location.href = "game.html";
 
 }
@@ -43,3 +42,37 @@ setPlayerData = () => {
         .innerHTML=level;
 }
 // end game console js
+
+startGame=()=>{
+    generateQuestion();
+}
+
+generateQuestion=()=>{
+    let selectedMax=checkLevel();
+    let number1=generateNumber(1,selectedMax);
+    console.log(number1)
+}
+
+generateNumber=(min, max)=>{
+    return Math.floor(Math.random() * (max - min) + min); // specific range ==> example 1-101
+}
+
+checkLevel=()=>{
+    let levelNumber=51; //default Beginner
+    switch (level){
+        case "Beginner": levelNumber=51;break;
+        case "Middle": levelNumber=101;break;
+        case "Advanced": levelNumber=1001;break;
+    }
+    return levelNumber;
+}
+
+
+
+
+
+
+
+
+
+
