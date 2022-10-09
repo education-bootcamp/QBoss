@@ -26,13 +26,14 @@
                     class="form-label">Player Name</label>
             <input type="email"
                    class="form-control"
+                   id="playerName"
                    >
         </div>
 
         <div class="mb-3">
             <label
                     class="form-label">Level</label>
-            <select name="" id="" class="form-control">
+            <select name="" id="level" class="form-control">
                 <option value="Beginner">Beginner</option>
                 <option value="Middle">Middle</option>
                 <option value="Advanced">Advanced</option>
@@ -40,7 +41,9 @@
         </div>
 
         <div class="mb-3">
-            <button style="width: 100%"
+            <button
+                    onclick="letsGetStarted()"
+                    style="width: 100%"
                     class="btn btn-primary">Let's Dig it.</button>
         </div>
 
@@ -51,5 +54,6 @@
     </div>
 </div>
 
+<script src="main.js"></script>
 </body>
 </html>
