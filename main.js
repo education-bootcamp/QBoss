@@ -20,8 +20,10 @@ letsGetStarted = () => {
     playerName = tempPlayerName;
     level = levelElement.value;
     //====> redirect to gaming console==>
+    let playerData={name:playerName,level:level};
+    localStorage.setItem("playerData",JSON.stringify(playerData));
+    console.log(localStorage.getItem("playerData"));
     window.location.href = "game.html";
-    console.log(playerName)
 
 }
 setBorderColor = (element) => {
@@ -31,10 +33,13 @@ setBorderColor = (element) => {
 
 // start game console js
 setPlayerData = () => {
+    let storageData = JSON.parse(localStorage.getItem("playerData"));
+    playerName = storageData.name;
+    level = storageData.level;
+
     document.getElementById('player-name')
         .innerHTML=playerName;
     document.getElementById('player-level')
         .innerHTML=level;
-    console.log(playerName)
 }
 // end game console js
