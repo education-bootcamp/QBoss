@@ -52,12 +52,15 @@ startGame=()=>{
     generateQuestion();
 }
 
+
 generateQuestion=()=>{
     let selectedMax=checkLevel();
     number1=generateNumber(1,selectedMax);
     number2=generateNumber(1,selectedMax);
     exp=operators[generateNumber(0,5)];
     question = `${number1} ${exp} ${number2} =?`;
+    document.getElementById('question')
+        .innerHTML=question;
 }
 
 generateNumber=(min, max)=>{
