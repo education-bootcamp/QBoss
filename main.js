@@ -5,6 +5,8 @@ let number2=0;
 let exp='';
 operators=['+','-','/','*','%'];
 let question='';
+let time=0;
+let counter=null; // null => nothing
 
 // start login form js
 letsGetStarted = () => {
@@ -46,13 +48,9 @@ setPlayerData = () => {
     document.getElementById('player-level')
         .innerHTML=level;
 }
-// end game console js
-
 startGame=()=>{
     generateQuestion();
 }
-
-
 generateQuestion=()=>{
     let selectedMax=checkLevel();
     number1=generateNumber(1,selectedMax);
@@ -61,12 +59,11 @@ generateQuestion=()=>{
     question = `${number1} ${exp} ${number2} =?`;
     document.getElementById('question')
         .innerHTML=question;
+    executeTime();
 }
-
 generateNumber=(min, max)=>{
     return Math.floor(Math.random() * (max - min) + min); // specific range ==> example 1-101
 }
-
 checkLevel=()=>{
     let levelNumber=51; //default Beginner
     switch (level){
@@ -76,9 +73,18 @@ checkLevel=()=>{
     }
     return levelNumber;
 }
+executeTime=()=>{
+    setInterval(()=>{
+        time++;
+        document.
+        getElementsByClassName('counter-time')[0].innerHTML=time;
 
-
-
+        if(time===60){
+            alert('Failed');
+        }
+    }, 1000);
+}
+// end game console js
 
 
 
