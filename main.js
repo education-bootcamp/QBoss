@@ -17,14 +17,24 @@ letsGetStarted = () => {
         return;
     }
 
-    playerName=tempPlayerName;
-    level=levelElement.value;
+    playerName = tempPlayerName;
+    level = levelElement.value;
     //====> redirect to gaming console==>
-    window.location.href="game.html";
+    window.location.href = "game.html";
     console.log(playerName)
 
 }
-setBorderColor=(element)=>{
-    element.style.borderColor='';
+setBorderColor = (element) => {
+    element.style.borderColor = '';
 }
 // end login form js
+
+// start game console js
+setPlayerData = () => {
+    document.getElementById('player-name')
+        .innerHTML=playerName;
+    document.getElementById('player-level')
+        .innerHTML=level;
+    console.log(playerName)
+}
+// end game console js
